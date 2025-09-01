@@ -10,7 +10,8 @@ services:
       - DB_USER=root
       - DB_PASSWORD=secret
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
 
   frontend:
     build: ./frontend
@@ -27,12 +28,17 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_DATABASE=catalogo
+      - MYSQL_DATABASE=precos
     ports:
       - "3306:3306"
     volumes:
-      - ./catalogo.sql:/docker-entrypoint-initdb.d/catalogo.sql
+      - ./precos.sql:/docker-entrypoint-initdb.d/precos.sql
       - mysql_data:/var/lib/mysql
+    healthcheck: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-psecret"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   mysql_data:

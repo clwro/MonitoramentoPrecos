@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface PrecosRepository extends JpaRepository<Precos, Integer> {
 
-    @NativeQuery(value = "SELECT * FROM Precos WHERE date >= :startDate")
+    @NativeQuery(value = "SELECT * FROM precos WHERE date >= :startDate")
     List<Precos> findPrecosSince(@Param("startDate")LocalDate startDate);
 }
