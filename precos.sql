@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS precos;
+
+USE precos;
+
+CREATE TABLE precos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    date DATE NOT NULL,
+    region VARCHAR(10) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL
+);
