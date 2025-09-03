@@ -1,4 +1,4 @@
-# Catálogo de Produtos
+# Monitoramento de Preços do Mercado de Energia
 
 Este é um projeto de monitoramento de preços do mercado de energia com um back-end em Java com Spring Boot e um front-end em React com TypeScript e Vite.
 
