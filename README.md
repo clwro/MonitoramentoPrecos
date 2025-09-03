@@ -52,6 +52,17 @@ VITE_API_URL=http://localhost:8080
 
 A aplicação estará rodando em `http://localhost:8080`.
 
+## Como rodar os testes
+
+1.  Navegue até o diretório do back-end:
+    ```bash
+    cd MonitoramentoDePrecos/backend
+    ```
+2.  Rode o seguinte comando:
+    '''    ./mvnw test
+    ```
+``
+
 ## Como rodar o front-end
 
 ### Pré-requisitos
@@ -90,9 +101,10 @@ A aplicação estará rodando em `http://localhost:8081`.
     docker-compose up --build
     ```
 
-A aplicação estará disponível em `http://localhost:8081` e o back-end em `http://localhost:8080`.
+'''A aplicação estará disponível em `http://localhost:8081` e o back-end em `http://localhost:8080`.
 
 ## Dependências
+'''
 
 ### Back-end
 
